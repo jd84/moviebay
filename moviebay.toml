@@ -1,0 +1,33 @@
+[database]
+  name = "moviebay.db"
+
+[tmdb]
+  api_key = "asd3d"
+
+[library]
+  movies = "/path/to/movies"
+
+[ffmpeg]
+  bin = "ffmpeg"
+  
+[ffmpeg.codecs]
+  [ffmpeg.codecs."*"]
+    args = [
+      "-ss",
+      "%ss", 
+      "-i",
+      "%i", 
+      "-f",
+      "%f", 
+      "-vcodec",
+      "%vcodec", 
+      "-acodec",
+      "%acodec", 
+      "-strict", 
+      "experimental", 
+      "-preset", 
+      "ultrafast", 
+      "-movflags", 
+      "frag_keyframe+empty_moov+faststart", 
+      "pipe:1"
+    ]
